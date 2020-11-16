@@ -36,15 +36,17 @@ year = '2020'
 low_hours = [0,1,2,3,4,5,6,22,23]
 hi_hours = range(7,22)
 
-low_p = rnd(2, 7)/100
-hi_p = 1-low_p
-number = rnd(300, 700)
-low_number = int(number*low_p)
-hours = get_hours()
-minutes = get_minutes()
-seconds = get_minutes()
-ips = get_ips()
 for day in days:
+    low_p = rnd(2, 7)/100
+    hi_p = 1-low_p
+    number = rnd(300, 700)
+    low_number = int(number*low_p)
+
+    hours = get_hours()
+    minutes = get_minutes()
+    seconds = get_minutes()
+    ips = get_ips()
+
     fout = open(day+'.csv', 'w')
     print("дата время ; исходящий IP", file = fout)
     for i in range(number):
